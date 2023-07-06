@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "52f1b519-4cae-453c-8c96-1a5b1df31c58",
+		"name": "RSocketDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28385120"
+	},
+	"item": [
+		{
+			"name": "List all Organization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/RSocket/Organizations"
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Organizations at Client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/RSocket/Organizations/Ben"
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Organizations at Server",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organization\":{\r\n        \"name\":\"\",\r\n        \"website\":\"\",\r\n        \"country\":\"\",\r\n        \"numberOfEmployees\":\"10\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/RSocket/Organizations/filter"
+			},
+			"response": []
+		}
+	]
+}
